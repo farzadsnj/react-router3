@@ -11,9 +11,10 @@ export function NavBar() {
     }
 
   return (
-    <nav>
+    <nav className='primary-nav '>
         <NavLink style={navLinkStyles} to='/'>Home</NavLink>
         <NavLink style={navLinkStyles} to='about'>About</NavLink>
+        <NavLink style={navLinkStyles} to='nested-products'>NestedProducts</NavLink>
 
         {/* <Link to='/'>Home</Link>
         <Link to='about'>About</Link> */}
