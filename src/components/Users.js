@@ -14,10 +14,11 @@ function Users() {
             <button onClick={()=> setSearchParams({filter: 'active'})}>Active users</button>
             <button onClick={()=> setSearchParams({})}>Reset filter</button>
         </div>
-    </div>
-    {
+        
+        {
         showActiveUsers ? <h2>showing active user</h2> : <h2>showing all users</h2>
-    }
+        }
+    </div>
   )
 }
 
