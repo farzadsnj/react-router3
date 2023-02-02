@@ -14,7 +14,7 @@ import Profile from "./components/Profile";
 import { RequiredAuth } from "./components/RequiredAuth";
 import UserDetails from "./components/UserDetails";
 import Users from "./components/Users";
-const LayzAbout = React.lazy(() => import('./components/About'))
+const LayzAbout = React.lazy(() => import("./components/About"));
 
 function App() {
   return (
@@ -22,20 +22,32 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="about" element={<React.Suspense fallback='Loading...'>
-          <LayzAbout />
-          </React.Suspense>} />
+        <Route
+          path="about"
+          element={
+            <React.Suspense fallback="Loading...">
+              <LayzAbout />
+            </React.Suspense>
+          }
+        />
         <Route path="order-summary" element={<OrderSummary />} />
         <Route path="*" element={<NoMatch />} />
         <Route path="nested-products" element={<NestedProducts />}>
-          <Route index element={<FeaturedProducts />} /> 
+          <Route index element={<FeaturedProducts />} />
           {/* show the page inside parent page */}
           <Route path="featured" element={<FeaturedProducts />} />
           <Route path="new" element={<NewProducts />} />
         </Route>
         <Route path="users" element={<Users />} />
         <Route path="users/:userId" element={<UserDetails />} />
-        <Route path="profile" element={<RequiredAuth><Profile /></RequiredAuth>} />
+        <Route
+          path="profile"
+          element={
+            <RequiredAuth>
+              <Profile />
+            </RequiredAuth>
+          }
+        />
         <Route path="login" element={<Login />} />
       </Routes>
     </AuthProvider>
